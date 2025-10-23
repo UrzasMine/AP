@@ -1,0 +1,182 @@
+\documentclass[
+    toc=bibliographynumbered,
+    DIV=13,
+    12pt,
+    twoside=false
+]{article}
+
+
+\setlength{\parindent}{0pt}
+\usepackage[backend=biber, style=phys, biblabel=brackets, block=ragged, language=autobib, autolang=other]{biblatex}
+\usepackage{newcomputermodern}
+
+\usepackage{paralist}
+\usepackage{tcolorbox}
+\usepackage{tabularray}
+\usepackage{caption}
+\usepackage{titlesec}    % Für das Formatieren von Überschriften
+\usepackage{lipsum}      % Zum Generieren von Blindtext
+\usepackage{subfiles}
+\usepackage{xspace}
+\usepackage{boxedminipage2e}
+\usepackage{fancyhdr}
+\usepackage[ngerman]{babel}
+\usepackage[pdfborderstyle={/S/U/W 1}]{hyperref}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage[figure]{hypcap}
+\usepackage{tikz}
+\usepackage{icomma}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{ulem}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+\usepackage{upgreek}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\usepackage[a4paper,
+left=2.5cm, right=2.5cm,
+top=2.5cm, bottom=2cm, headheight = 2cm]{geometry}
+\addbibresource{4.referenzen.bib}
+
+\pagestyle{empty}
+
+\newcommand{\Ueberschrift}{Ich bin ein Murmeltier}
+\newcommand{\Datum}{31.01.2025}%
+\newcommand{\kb}{\text{\begin{math} k_{\mathrm{B}} \end{math}}}
+\renewcommand{\sin}[1]{\text{sin\begin{math}\left(#1\right)\end{math}}}
+\renewcommand{\cos}[1]{\text{cos\begin{math}\left(#1\right)\end{math}}}
+\newcommand{\nameee}{Party People}
+\newcommand{\group}{Gruppe: Penis}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\var}[2]{\text{\begin{math} #1_{\mathrm{#2}}
+\end{math} }}
+
+\DeclareDocumentCommand{\bz}{smE{_}{}oO{,}E{^}{}oO{,}}{%  \bz* T_c[max]^2
+\ensuremath%
+{%
+ \IfBooleanTF{#1}{\mathrm{#2}}{#2}%
+ \IfNoValueF{#3}{%
+  \sb%
+  {%
+   \mathrm{%
+    #3\IfNoValueF{#4}{#5#4} %
+   }%
+  }%
+ }%
+ \IfNoValueF{#6}{%
+  \sp%
+  {%
+   \mathrm{%
+    #6\IfNoValueF{#7}{#8#7}%
+   }%
+  }%
+ }%
+}%
+}%
+
+
+\captionsetup{
+    font={small}, % Schriftgröße (z. B. small, footnotesize, large)
+    labelfont={color=black,bf}, % Farbe und Stil des Labels (z. B. "Abbildung 1")
+    textfont={color=gray}, % Farbe des Textes
+}
+
+
+
+% Definiere die Farbe
+\newcommand{\Farbe}{red!40!gray}
+
+
+\renewcommand{\cftsecfont}{\color{\Farbe}\bfseries} % Kapitelüberschriften fett und rot
+\renewcommand{\cftsecpagefont}{\color{black}}
+
+%  \setlength{\cftbeforesecskip}{2cm}
+% Setze Schriftart, Größe und Farbe für die Überschriften und behalte die Nummerierungen bei
+\titleformat{\section}[hang]
+  {\LARGE\bfseries\color{\Farbe}} % Format für Titel
+  {\begin{tcolorbox}[colframe=red!40!gray, colback=red!40!gray, sharp corners, boxrule=0.8mm, arc=4mm, width=1cm, height=1cm, halign=center, valign=center] \textcolor{white}{\huge\thesection} \end{tcolorbox}} % Nummerierung in Box
+  {1em} {}  % Abstand und Titel
+%   \titlespacing*{\section}{0pt}{2ex plus 1ex minus .2ex}{3ex plus .2ex}
+
+\titleformat{\subsection}[hang]
+  {\Large\bfseries\color{\Farbe}} % Format für Titel
+  {\begin{tcolorbox}[colframe=red!40!gray, colback=red!40!gray, sharp corners, boxrule=0.8mm, arc=4mm, width=1.4cm, height=0.8cm, halign=center, valign=center] \textcolor{white}{\Large\thesubsection} \end{tcolorbox}} % Nummerierung in Box
+  {1em} {}  % Abstand und Titel
+
+\titleformat{\subsubsection}[hang]
+  {\large\bfseries\color{\Farbe}} % Format für Titel
+  {\begin{tcolorbox}[colframe=red!40!gray, colback=red!40!gray, coltitle=white, sharp corners, boxrule=0.8mm, arc=4mm, width=1.7cm, height=0.6cm, halign=center, valign=center]\textcolor{white} {\large\thesubsubsection} \end{tcolorbox}} % Nummerierung in Box
+  {1em} {}  % Abstand und Titel
+
+
+\begin{document}
+\begin{center}
+    \vspace*{1cm}
+    \begin{boxedminipage}[t][3.5cm][c]{\textwidth}
+        \begin{center}
+            \begin{Huge}
+                \textbf{\Ueberschrift}
+            \end{Huge}
+                \begin{Large}
+                    \\Anfängerpraktikum\\
+                \end{Large}
+                    \Datum
+        \end{center}
+    \end{boxedminipage}
+
+    \vspace{2cm}
+
+    \begin{boxedminipage}[t][10cm][c]{10cm}
+        \includegraphics[width=\linewidth]{./Bilder/Aufbau/sie.JPG}	  
+    \end{boxedminipage}
+
+    \vspace{2cm}
+
+    \Large{\nameee\\}
+    \large{\group}
+    \normalsize
+
+    \vspace{2cm}
+
+    \color{black}  
+      \textbf{„Mit der Abgabe dieses Protokolls wird bestätigt, dass es kein Plagiat ist. Falls es dennoch eindeutig
+      als Plagiat erkannt werden sollte, ist bekannt, dass das einen Punktabzug von 20 Punkten zur Folge,
+      ohne Möglichkeit der Nachbearbeitung, hat. Diese Bewertung wird ausnahmslos zur Gesamtnote im
+      Anfängerpraktikum beitragen.“}    
+\end{center}
+
+\pagestyle{fancy}
+\fancyhead[L]{\Ueberschrift}
+\fancyhead[R]{\Datum}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[L]{\nameee}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\tableofcontents
+\newpage
+
+\include{1.Theorie.tex}
+\include{2.Aufbau.tex}
+\include{3.Auswertung.tex}
+
+\section{Anhang}
+
+\listoffigures
+\listoftables
+
+\printbibliography[title={\textcolor{black}{Quellenverzeichnis}}]
+
+
+
+
+
+
+%\includepdf[pages=-]{W4.pdf}
+\end{document}
